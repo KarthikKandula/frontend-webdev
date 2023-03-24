@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar {
+    display: flex;
+    list-style-type: none;
+}
+
+.navbar li ul {
+    position: absolute;
+    /* make them absolute positioned */
+    top: 100%;
+    /* move them below their parent links */
+    left: 0;
+    /* align them to the left edge of their parent links */
+}
+
+.navbar li {
+    /* margin-left: 10px; */
+    position: relative;
+    /* make them relative containers */
+    list-style-type: none;
+}
+
+.navbar a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+}
+
+.navbar ul {
+    display: none;
+    /* hide the sub-menus */
+    width: 200px;
+    /* give some width to the sub-menus */
+    background-color: #ddd;
+    /* give some background color to contrast */
+}
+
+.navbar li:hover ul {
+    display: block;
+    /* show the sub-menus on hover */
+}
+
+.main {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #333;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    width: 100%; /* give some width to the main div */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* flex-direction :row ;  */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* justify-content :space-around ;  */
+    /* text-align: center; */
+}
+
+/* add a new class for the content div */
+.content {
+    margin: auto;
+    /* center it horizontally within its parent */
+    text-align: center;
+}
+
+.column {
+    display: flex;
+    /* height: 300px; */
+    /* height: 100%; */
+}
+
+/* use calc() function to set the width of each column */
+.column-left {
+    border: 1px solid black;
+    width: calc(20%);
+}
+
+.column-mid {
+    border: 1px solid black;
+    width: calc(60%);
+}
+
+.column-right {
+    border: 1px solid black;
+    width: calc(20%);
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f1f1;
+    padding: 20px;
+    /* position: absolute;
+    bottom: 0;
+    text-align: center; */
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar li {
+        margin-top: 10px;
+    }
+
+    .main {
+        clear: both;
+        /* clear the floats of the columns */
+        /* flex-direction: column; */
+        /* align-items: center; */
+    }
+
+    .column {
+        width: 80%;
+    }
+}
